@@ -194,14 +194,20 @@ footer .content .links .period {
 
 #registrationform {
   background: #222632;
-  max-width: 600px;
+  max-width: 540px;
   right: 0;
   left: 0;
   margin: auto;
-  height: 650px;
+  min-height: 650px;
   margin-top: 150px;
   border-top: 3px solid #ff6333;
   color: #fff;
+}
+@media screen and (max-width: 424px) {
+  #registrationform {
+    margin: 0;
+    height: 100%;
+  }
 }
 #registrationform .content {
   padding-top: 120px;
@@ -210,6 +216,13 @@ footer .content .links .period {
   color: #8f92a1;
   margin-left: 30px;
   margin-bottom: 60px;
+}
+@media screen and (max-width: 424px) {
+  #registrationform h2 {
+    margin: 0;
+    margin-bottom: 60px;
+    text-align: center;
+  }
 }
 #registrationform i {
   position: absolute;
@@ -227,9 +240,18 @@ footer .content .links .period {
   border-top: 1px solid #3e4154;
   border-bottom: 1px solid #3e4154;
   border-radius: 0;
+  width: 100%;
 }
 #registrationform input:focus > i {
   color: #fff;
+}
+#registrationform .buttons {
+  display: flex;
+}
+@media screen and (max-width: 424px) {
+  #registrationform .buttons {
+    display: block;
+  }
 }
 #registrationform .button {
   background: transparent;
@@ -240,6 +262,48 @@ footer .content .links .period {
   outline: 0;
   margin-top: 40px;
   margin-left: 30px;
+  transition: background 0.3s, color 0.3s;
+}
+#registrationform .button:hover {
+  background: #0000000d;
+  border-color: #ff3c00;
+}
+@media screen and (max-width: 424px) {
+  #registrationform .button {
+    margin-left: auto;
+    width: 100%;
+  }
+}
+#registrationform .links {
+  margin-left: 20px;
+  margin-top: 45px;
+}
+@media screen and (max-width: 424px) {
+  #registrationform .links {
+    display: flex;
+    justify-content: center;
+  }
+}
+#registrationform .links a {
+  color: #8f92a1;
+  margin-right: 10px;
+  margin-bottom: 7px;
+  display: block;
+}
+#registrationform .description {
+  color: #8f92a1;
+  margin-top: 120px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-bottom: 15px;
+}
+@media screen and (max-width: 424px) {
+  #registrationform .description {
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
 
 * {

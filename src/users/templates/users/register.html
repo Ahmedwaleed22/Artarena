@@ -1,5 +1,5 @@
 {% extends 'includes/base.html' %}
-{% block title %}| Login{% endblock %}
+{% block title %}| Register{% endblock %}
 {% block head %}
 <style>
     body {
@@ -14,23 +14,27 @@
 {% block body %}
 <section id="registrationform">
     <div class="content">
-        <h2>Login To Your Account</h2>
+        <h2>Register An Account</h2>
         {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
-        <form action="/login/" method="post">
+        <form action="/register/" method="post">
             {% csrf_token %}
             <div class="input">
                 <i class="username fal fa-user login-icon"></i>
                 <input class="form-control login-input" type="text" id="username" name="username" placeholder="Username">
             </div>
             <div class="input">
+                <i class="email fal fa-user login-icon"></i>
+                <input class="form-control login-input" type="text" id="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="input">
                 <i class="password fal fa-lock login-icon"></i>
                 <input class="form-control login-input" type="password" id="password" name="password" placeholder="Password">
             </div>
             <div class="buttons">
-                <button class="button" type="submit">LOG IN</button>
+                <button class="button" type="submit">REGISTER</button>
                 <div class="links">
                     <a href="/forgetpassword">Forget Password?</a>
-                    <a href="/register">Create An Account?</a>
+                    <a href="/login">Have An Account?</a>
                 </div>
             </div>
         </form>
