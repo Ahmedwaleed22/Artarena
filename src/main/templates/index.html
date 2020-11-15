@@ -1,0 +1,115 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+{% block title %}| Official Site{% endblock %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<section id="main">
+    <div class="container">
+        <div class="text">
+            <div class="title">Artists have a great part in our colorful world</div>
+        </div>
+    </div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="title">
+      <h1>Our Services</h1>
+      <p>In This Section We Will Explain What Our New Project Introduce To The World Or Why Should You Choose Us</p>
+    </div>
+    <div class="card-deck">
+      <div class="card">
+        <i class="fal fa-paint-roller"></i>
+        <P>You Are Able To Introduce Your Paintings To The Whole World With Only One Click And Get Benefits From Publishing It</P>
+      </div>
+      <div class="card">
+        <i class="fal fa-eye"></i>
+        <P>You Are Able To Watch Other People Paintings To Get Some Ideas For Your New Painting And Introduce It To The World</P>
+      </div>
+      <div class="card">
+        <i class="far fa-dollar-sign"></i>
+        <p>You Are Getting Benefits From Only Sharing Your Paintings With Others And Get Likes And Views. Your Benefit Will Be 30%</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="topartists">
+    <div class="container">
+      <h1 class="title">Top Artists For This Week</h1>
+      <div class="card-deck">
+        <div class="card">
+          <img src="{% static 'img/avatar.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Member Since 11, September, 2020</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'img/avatar.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">John Doe</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Member Since 1, September, 2020</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'img/femaleAvatar.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Jane Doe</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Member Since 3, October, 2020</small>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section id="ad">
+  <div class="container">
+    <h1 class="title">Convert Your Tallent To Your Brand New Career With Us</h1>
+  </div>
+</section>
+<section id="top-paintings">
+  <div class="container">
+    <h1 class="title">Top Paintings For This Week</h1>
+    <div class="card-deck">
+      <div class="card">
+        <img src="{% static 'img/painting1.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Paint Name</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Painted By John Doe On September, 2020</small>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/painting2.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Paint Name</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Painted By John Doe On September, 2020</small>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/painting3.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Paint Name</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Painted By John Doe On October, 2020</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'includes/footer.html' %}
+{% endblock %}

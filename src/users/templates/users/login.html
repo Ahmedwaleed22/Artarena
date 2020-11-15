@@ -1,0 +1,31 @@
+{% extends 'includes/base.html' %}
+{% block title %}| Login{% endblock %}
+{% block head %}
+<style>
+    body {
+        background:
+        linear-gradient(to left top, #c579f3 0%, #f16b62 100%),
+        linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1))/*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+        background-attachment:fixed;
+        height:100%;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<section id="registrationform">
+    <div class="content">
+        <h2>Login To Your Account</h2>
+        <form action="/login/" method="post">
+            <div class="input">
+                <i class="username fal fa-user login-icon"></i>
+                <input class="form-control login-input" type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="input">
+                <i class="password fal fa-lock login-icon"></i>
+                <input class="form-control login-input" type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <button class="button" type="submit">LOG IN</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

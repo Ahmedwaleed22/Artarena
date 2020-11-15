@@ -1,0 +1,49 @@
+#registrationform {
+    background: #222632;
+    max-width: 600px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 650px;
+    margin-top: 150px;
+    border-top: 3px solid $maincolor;
+    color: #fff;
+    .content {
+        padding-top: 120px
+    }
+    h2 {
+        color: #8f92a1;
+        margin-left: 30px;
+        margin-bottom: 60px;
+    }
+    i {
+        position: absolute;
+        margin-top: 18.5px;
+        margin-left: 30px;
+        color: #7d8093
+    }
+    input {
+        background: #33354a;
+        color: #fff;
+        padding: 25px;
+        padding-left: 70px;
+        border: 0;
+        outline: 0;
+        border-top: 1px solid #3e4154;
+        border-bottom: 1px solid #3e4154;
+        border-radius: 0;
+        &:focus > i {
+            color: #fff
+        }
+    }
+    .button {
+        background: transparent;
+        border: 3px solid $maincolor;
+        color: #fff;
+        border-radius: 35px;
+        padding: 15px 80px;
+        outline: 0;
+        margin-top: 40px;
+        margin-left: 30px;
+    }
+}

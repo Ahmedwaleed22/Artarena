@@ -1,0 +1,116 @@
+$maincolor: #ff6333;
+$linkscolor: #fff;
+
+@import 'navbar', 'footer', 'login';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+.primary-text {
+    color: $maincolor
+}
+#main {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/img/background3.jpg') center;
+    width: 100%;
+    min-height: 700px;
+    .container {
+        padding-top: 10rem;
+        @media screen and (max-width: 1100px) {
+            padding-top: 2rem;
+        }
+    }
+    .title {
+        color: #fff;
+        font-size: 6rem;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @media screen and (max-width: 1100px) {
+            font-size: 5rem;
+        }
+    }
+}
+#about {
+    .title {
+        text-align: center;
+        padding: 5rem 0 3rem 0;
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    }
+    .container {
+        max-width: 1400px;
+    }
+    .card-deck {
+        .card {
+            padding: 30px;
+            display: flex;
+            text-align: center;
+            -webkit-box-shadow: 0 3px 7px #777;
+            -moz-box-shadow: 0 3px 7px #777;
+            box-shadow: 0 3px 7px #777;
+            i {
+                color: $maincolor;
+                font-size: 4rem;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+            &:hover {
+                -webkit-box-shadow: 0 4px 16px #777;
+                -moz-box-shadow: 0 4px 16px #777;
+                box-shadow: 0 4px 16px #777;
+            }
+        }
+    }
+}
+#topartists {
+    padding: 5rem 0;
+    .container {
+        max-width: 1250px;
+    }
+    .title {
+        margin-bottom: 50px;
+    }
+    img {
+        height: 325px
+    }
+}
+#ad {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/img/secondcontainer.jpg') center no-repeat;
+    min-height: 500px;
+    color: #fff;
+    .title {
+        font-size: 4rem;
+        text-align: center;
+        padding: 5rem 0;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 370px) {
+            font-size: 3rem;
+        }
+    }
+}
+#top-paintings {
+    padding: 5rem 0;
+    .container {
+        max-width: 1400px;
+    }
+    .title {
+        margin-bottom: 50px;
+    }
+    img {
+        height: 450px
+    }
+}

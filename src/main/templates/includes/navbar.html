@@ -1,0 +1,26 @@
+<nav id="navbar">
+	<h2 id="title"><a href="/"><span class="first-part">Art</span>arena <i class="far fa-paint-brush-alt"></i></a></h2>
+	<div id="nav-icon" onclick="OpenNav()">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+	</div>
+	<ul id="nav-links">
+		<li><a href="/" class="main animation">Home</a></li>
+		<li><a href="/gallery" class="animation">Gallery</a></li>
+		<li><a href="/topusers" class="animation">Top Users</a></li>
+		<li><a href="/news" class="animation">News</a></li>
+		{% if user.is_authenticated %}
+		<li class="dropdown">
+			<a href="#">My Account <i class="dropdown-icon far fa-angle-down"></i></a>
+			<ul>
+				<li><a onclick="window.open('/profile', '_self')">Profile</a></li>
+				<li><a onclick="window.open('/logout', '_self')">Logout</a></li>
+			</ul>
+		</li>
+		<li><a href="/profile" class="animation mobile-only">My Account</a></li>
+		{% else %}
+		<li><a href="/login" class="animation">Login/Register</a></li>
+		{% endif %}
+	</ul>
+</nav>
