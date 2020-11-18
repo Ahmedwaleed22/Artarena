@@ -1,0 +1,35 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<div class="title">
+    <h1>Our Gallery</h1>
+    <p>You Can Find All Recommended Photos For You</p>
+</div>
+<div class="gallery">
+    <div class="container">
+        <div class="card-deck">
+            <div class="painting">
+                <div class="overlay">
+                    <i class="fas fa-ad"></i>
+                    <p class="ptitle">Mixed Colors</p>
+                </div>
+                <img src="{% static 'img/painting1.jpg' %}" alt="painting1">
+            </div>
+            <div class="painting">
+                <div class="overlay">
+                    <p class="ptitle">Its A Beautiful World</p>
+                </div>
+                <img src="{% static 'img/painting2.jpg' %}" alt="painting2">
+            </div>
+            <div class="painting">
+                <div class="overlay">
+                    <i class="fas fa-ad"></i>
+                    <p class="ptitle">Blue Hummans bla bla bla bla bla</p>
+                </div>
+                <img src="{% static 'img/painting3.jpg' %}" alt="painting3">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

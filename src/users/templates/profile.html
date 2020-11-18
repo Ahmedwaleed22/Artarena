@@ -1,0 +1,90 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+{% block head %}
+<style>
+    body {
+        background: #f2f6f4;
+    }
+</style>
+{% endblock %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<section id="profile">
+    <div class="container">
+        <div class="leftside">
+            <div class="userInfo">
+                <div class="avatar">
+                    <a href="/profile/edit">
+                        <div class="changephotoicon">
+                            <i class="changephoto fas fa-camera"></i>
+                        </div>
+                    </a>
+                    <img src="{% static 'img/avatar.png' %}">
+                </div>
+                <h4 class="title">Hello, {{ user.get_username }}</h4>
+                <a class="editdata" href="/profile/edit"><i class="fal fa-edit"></i></a>
+            </div>
+            <div class="userInfo">
+                <i class="icon fad fa-wallet"></i>
+                <h4 class="profits">$1280.00</h4>
+                <p class="abalance">Available Balance</p>
+                <div class="actions">
+                    <a href="/profits/withdraw">Withdraw</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="details">
+                <h2>Personal Details</h2>
+                <div class="info">
+                    <div class="detailblock">
+                        <div class="title">Firstname</div>
+                        <div class="answer">{{ user.first_name }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Lastname</div>
+                        <div class="answer">{{ user.last_name }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Username</div>
+                        <div class="answer">{{ user.get_username }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title email">Email Address</div>
+                        <div class="answer">{{ user.email }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Joined On</div>
+                        <div class="answer">{{ user.date_joined }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings">
+                <h2>Account Settings</h2>
+                <div class="info">
+                    <div class="detailblock">
+                        <div class="title">Language</div>
+                        <div class="answer">English (United States)</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">TimeZone</div>
+                        <div class="answer"><script>document.write(Intl.DateTimeFormat().resolvedOptions().timeZone)</script></div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Last Login</div>
+                        <div class="answer">{{ user.last_login }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title long">Account Status</div>
+                        <div class="answer">{{ user.is_active }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Staff User</div>
+                        <div class="answer">{{ user.is_staff }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

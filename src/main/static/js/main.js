@@ -60,7 +60,7 @@ if (document.body.contains(dropdown)) {
     });
 }
 
-let dynamicInputs = document.querySelectorAll(".login-input");
+let dynamicInputs = document.querySelectorAll(".login-input, #id_email, #id_new_password1, #id_new_password2");
 
 dynamicInputs.forEach((input) => {
     input.addEventListener('focus', () => {
@@ -73,3 +73,22 @@ dynamicInputs.forEach((input) => {
         document.querySelector(`.${inputid}`).style.color = document.querySelector(`.${inputid}`).getAttribute('data-color');
     });
 });
+
+
+let PassResetInput = document.querySelector("#id_email");
+
+if (PassResetInput != null) {
+    PassResetInput.placeholder = "Email Address";
+}
+
+let PassChangeInput1 = document.querySelector("#id_new_password1");
+
+if (PassChangeInput1 != null) {
+    PassChangeInput1.placeholder = "New Password";
+}
+
+let PassChangeInput2 = document.querySelector("#id_new_password2");
+
+if (PassChangeInput2 != null) {
+    PassChangeInput2.placeholder = "Confirm New Password";
+}

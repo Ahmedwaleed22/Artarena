@@ -13,6 +13,13 @@
     display: none;
   }
 
+  ul#search form {
+    width: 400px;
+    @media screen and (max-width: 1632px) {
+      width: 250px;
+    }
+  }
+
   ul {
     display: flex;
     align-items: center;
@@ -75,7 +82,7 @@
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1362px) {
   #navbar {
     padding: 1.5rem 0;
 

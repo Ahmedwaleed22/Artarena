@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .forms import UserRegisterForm
 from django.views import View
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -56,3 +57,11 @@ class Register(View):
 
         form = UserRegisterForm()
         return render(request, 'users/register.html', {'form': form})
+
+
+class Profile(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            return render(request, 'profile.html', {})
+
+        raise Http404

@@ -12,6 +12,14 @@
 #navbar #nav-icon {
   display: none;
 }
+#navbar ul#search form {
+  width: 400px;
+}
+@media screen and (max-width: 1632px) {
+  #navbar ul#search form {
+    width: 250px;
+  }
+}
 #navbar ul {
   display: flex;
   align-items: center;
@@ -69,7 +77,7 @@
   display: none;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1362px) {
   #navbar {
     padding: 1.5rem 0;
   }
@@ -224,13 +232,19 @@ footer .content .links .period {
     text-align: center;
   }
 }
-#registrationform i {
+#registrationform .input p label {
+  display: none;
+}
+#registrationform .input ul {
+  display: none;
+}
+#registrationform .input i {
   position: absolute;
   margin-top: 18.5px;
   margin-left: 30px;
   color: #7d8093;
 }
-#registrationform input {
+#registrationform .input input {
   background: #33354a;
   color: #fff;
   padding: 25px;
@@ -242,8 +256,11 @@ footer .content .links .period {
   border-radius: 0;
   width: 100%;
 }
-#registrationform input:focus > i {
+#registrationform .input input:focus > i {
   color: #fff;
+}
+#registrationform .input i.id_email, #registrationform .input i.id_new_password1, #registrationform .input i.id_new_password2 {
+  margin-top: 30px;
 }
 #registrationform .buttons {
   display: flex;
@@ -306,6 +323,334 @@ footer .content .links .period {
   }
 }
 
+#profile {
+  margin-top: 40px;
+}
+#profile .container {
+  max-width: 1500px;
+}
+@media screen and (max-width: 768px) {
+  #profile .container {
+    max-width: 100%;
+  }
+}
+#profile .leftside {
+  max-width: 27.5%;
+  float: left;
+}
+@media screen and (max-width: 1362px) {
+  #profile .leftside {
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: none;
+  }
+}
+@media screen and (max-width: 879px) {
+  #profile .leftside {
+    display: block;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .leftside {
+    width: 100%;
+  }
+}
+#profile .userInfo {
+  background: #fff;
+  width: 400px;
+  text-align: center;
+  padding: 30px;
+  -webkit-box-shadow: 0 1px 7px #dde4e3;
+  -moz-box-shadow: 0 1px 7px #dde4e3;
+  box-shadow: 0 1px 7px #dde4e3;
+}
+#profile .userInfo:first-child {
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 414px) {
+  #profile .userInfo {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #profile .userInfo {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .userInfo {
+    height: 320px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 464px) {
+  #profile .userInfo {
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+#profile .userInfo .icon {
+  font-size: 4rem;
+  color: #a4afad;
+}
+#profile .avatar .changephoto {
+  position: absolute;
+  font-size: 1rem;
+  background: #ff6333;
+  padding: 20px;
+  border-radius: 50%;
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 110px;
+}
+#profile .userInfo img {
+  height: 170px;
+  width: 170px;
+  border: 3px solid #ff6333;
+  border-radius: 50%;
+  padding: 10px;
+}
+#profile h4 {
+  margin-top: 20px;
+}
+#profile .profits {
+  font-size: 3rem;
+}
+#profile .editdata {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #a4afad;
+}
+#profile .abalance {
+  margin-top: 10px;
+  color: #595f5e;
+}
+#profile .actions {
+  margin-top: 30px;
+  border-top: 1px solid #d4d4d4;
+  padding-top: 20px;
+}
+#profile .actions a {
+  color: #ff6333;
+}
+#profile .rightside .details {
+  float: left;
+  background: #fff;
+  margin-left: 100px;
+  width: 65%;
+  min-height: 318.5px;
+  -webkit-box-shadow: 0 1px 7px #dde4e3;
+  -moz-box-shadow: 0 1px 7px #dde4e3;
+  box-shadow: 0 1px 7px #dde4e3;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+#profile .rightside .details .info {
+  margin-left: 170px;
+  margin-top: 20px;
+}
+#profile .rightside .details .info .detailblock {
+  display: block;
+}
+#profile .rightside .details .info .detailblock:not(:last-child) {
+  margin-bottom: 20px;
+}
+#profile .rightside .details .info .detailblock .email {
+  margin-right: 20px !important;
+}
+#profile .rightside .details .info .detailblock div {
+  display: inline;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+#profile .rightside .details .info .detailblock div:first-child {
+  margin-right: 50px;
+  color: #7e8886;
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .details .info .detailblock div:first-child {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .details .info {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .details {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .details {
+    margin-top: 50px;
+  }
+}
+#profile .rightside .settings {
+  float: left;
+  background: #fff;
+  margin-left: 100px;
+  width: 65%;
+  height: 318.5px;
+  -webkit-box-shadow: 0 1px 7px #dde4e3;
+  -moz-box-shadow: 0 1px 7px #dde4e3;
+  box-shadow: 0 1px 7px #dde4e3;
+  padding: 15px 20px;
+}
+#profile .rightside .settings .info {
+  margin-left: 170px;
+  margin-top: 20px;
+}
+#profile .rightside .settings .info .detailblock {
+  display: block;
+}
+#profile .rightside .settings .info .detailblock:not(:last-child) {
+  margin-bottom: 20px;
+}
+#profile .rightside .settings .info .detailblock .long {
+  margin-right: 15px !important;
+}
+#profile .rightside .settings .info .detailblock div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  display: inline;
+}
+#profile .rightside .settings .info .detailblock div:first-child {
+  margin-right: 50px;
+  color: #7e8886;
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .settings .info .detailblock div:first-child {
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .settings .info {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 1362px) {
+  #profile .rightside .settings {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-top: 50px;
+}
+.title h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.title p {
+  font-size: 1.2rem;
+}
+
+.gallery {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1362px) {
+  .card-deck {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 575px) {
+  .card-deck {
+    text-align: center;
+  }
+}
+
+.painting {
+  margin-right: 6.6px;
+  margin-bottom: 6.6px;
+}
+.painting:nth-child(4n) {
+  margin-right: 0px;
+}
+@media screen and (max-width: 1362px) {
+  .painting:nth-child(3n) {
+    margin-right: 0px;
+  }
+  .painting:nth-child(4n) {
+    margin-right: 6.6px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .painting:nth-child(2n) {
+    margin-right: 0px;
+  }
+  .painting:nth-child(3n) {
+    margin-right: 6.6px;
+  }
+  .painting:nth-child(4n) {
+    margin-right: 6.6px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .painting {
+    margin-right: 0px;
+  }
+}
+.painting .overlay {
+  position: absolute;
+  height: 280px;
+  width: 280px;
+  background: #0009;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.painting .overlay:hover {
+  opacity: 0.6;
+}
+.painting .overlay:hover > i {
+  opacity: 1;
+  font-size: 3rem;
+  color: yellow;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.painting .overlay p.ptitle {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.painting .overlay p.ptitle:only-child {
+  padding-top: 35px;
+}
+.painting .overlay:hover > p.ptitle {
+  opacity: 1;
+  font-size: 3rem;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.painting img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center center;
+  -webkit-box-shadow: 0 1px 8px #000;
+  -moz-box-shadow: 0 1px 8px #000;
+  box-shadow: 0 1px 8px #000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -331,7 +676,12 @@ body {
 }
 @media screen and (max-width: 1100px) {
   #main .container {
-    padding-top: 2rem;
+    padding-top: 8rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  #main .container {
+    padding-top: 5rem;
   }
 }
 #main .title {
@@ -424,6 +774,8 @@ body {
 }
 #top-paintings img {
   height: 450px;
+  object-fit: cover;
+  object-position: center center;
 }
 
 /*# sourceMappingURL=style.css.map */

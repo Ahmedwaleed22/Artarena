@@ -1,0 +1,97 @@
+.title {
+    text-align: center;
+    margin-top: 50px;
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+.gallery {
+    margin-top: 50px;
+}
+.card-deck {
+    @media screen and (max-width: 1362px) {
+        justify-content: center;
+    }
+    @media screen and (max-width: 575px) {
+        text-align: center;
+    }
+}
+.painting {
+    margin-right: 6.6px;
+    margin-bottom: 6.6px;
+    &:nth-child(4n) {
+        margin-right: 0px;
+    }
+    @media screen and (max-width: 1362px) {
+        &:nth-child(3n) {
+            margin-right: 0px;
+        }
+        &:nth-child(4n) {
+            margin-right: 6.6px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        &:nth-child(2n) {
+            margin-right: 0px;
+        }
+        &:nth-child(3n) {
+            margin-right: 6.6px;
+        }
+        &:nth-child(4n) {
+            margin-right: 6.6px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        margin-right: 0px;
+    }
+    .overlay {
+        position: absolute;
+        height: 280px;
+        width: 280px;
+        background: #0009;
+        opacity: 0;
+        transition: opacity 0.3s;
+        cursor: pointer;
+        &:hover {
+            opacity: .6;
+        }
+        &:hover > i {
+            opacity: 1;
+            font-size: 3rem;
+            color: yellow;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        p.ptitle {
+            opacity: 0;
+            transition: opacity .4s;
+            &:only-child {
+                padding-top: 35px;
+            }
+        }
+        &:hover > p.ptitle {
+            opacity: 1;
+            font-size: 3rem;
+            color: #fff;
+            margin-left: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+    img {
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        object-position: center center;
+        -webkit-box-shadow: 0 1px 8px #000;
+        -moz-box-shadow: 0 1px 8px #000;
+        box-shadow: 0 1px 8px #000;
+    }
+}
