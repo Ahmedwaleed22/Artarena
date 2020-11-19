@@ -2,18 +2,30 @@
 {% load static %}
 {% block body %}
 {% include 'includes/navbar.html' %}
+<script>
+    let loadFile = function(event) {
+        let upload = document.querySelector('.upload');
+        upload.querySelector("h3").style.visibility = "hidden";
+        upload.querySelector(".clickmessage").style.visibility = "hidden";
+        upload.style.background = `url("${URL.createObjectURL(event.target.files[0])}")`;
+    };
+</script>
 <section id="addphoto">
     <div class="container">
         <h1 class="uploadtitle">Upload Painting</h1>
+        <p class="help-text">Don't Worry, Image Preview May Show Your Photo In A Wrong Size!</p>
+        {% if MSG %}<div class="alert alert-info">{{ MSG }}</div>{% endif %}
         <div class="upload">
             <h3>Drop Your Painting Here!</h3>
-            <p>Or Click!</p>
-            <button class="btn btn-success"><i class="fas fa-plus-circle" aria-hidden="true"></i> Add Painting</button>
+            <p class="clickmessage">Or Click!</p>
+            <button onclick="document.querySelector('#photo').click()" class="btn btn-success"><i class="fas fa-plus-circle" aria-hidden="true"></i> Add Painting</button>
         </div>
-        <form class="addphoto" action="/gallery/add/" method="post">
-            <input type="text" class="form-control" name="name" placeholder="Paint Name">
-            <textarea name="description" class="form-control" placeholder="Painting Description"></textarea>
-            <select name="category" class="form-control">
+        <form class="addphoto" action="/gallery/add/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input style="display: none;" id="photo" accept="image/*" onchange="loadFile(event)" type="file" name="file" required>
+            <input type="text" class="form-control" name="name" placeholder="Paint Name" required>
+            <textarea name="description" class="form-control" placeholder="Painting Description" required></textarea>
+            <select name="category" class="form-control" required>
                 <option value="" disabled selected>Category</option>
                 <option value="Illustration Drawing">Illustration Drawing</option>
                 <option value="Life Drawing">Life Drawing</option>

@@ -100,12 +100,18 @@
     .uploadtitle {
         margin-bottom: 20px;
     }
+    .help-text {
+        font-size: 1.05rem;
+        color: #777777
+    }
     .upload {
         border: 4px dashed #e6e6e6;
         background: #f9f6f6;
         padding: 50px;
         padding-bottom: 1px;
         text-align: center;
+        object-fit: cover;
+        object-position: center center;
         h3 {
             font-size: 2rem;
             text-align: center;
