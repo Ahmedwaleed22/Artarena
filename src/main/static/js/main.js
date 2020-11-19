@@ -15,80 +15,94 @@ function OpenNav() {
 	// NavIcon Animation
 	navIcon.classList.toggle('toggle');
 }
+(function () {
 
-let inputs = document.querySelectorAll("input, textarea");
+    let inputs = document.querySelectorAll("input, textarea");
 
-inputs.forEach((input) => {
-    input.addEventListener("focus", () => {
-        input.setAttribute("data-placeholder", input.placeholder);
-        input.placeholder = "";
+    inputs.forEach((input) => {
+        input.addEventListener("focus", () => {
+            input.setAttribute("data-placeholder", input.placeholder);
+            input.placeholder = "";
+        });
+        input.addEventListener("blur", () => {
+            input.placeholder = input.getAttribute("data-placeholder");
+            input.setAttribute("data-placeholder", "");
+        });
     });
-    input.addEventListener("blur", () => {
-        input.placeholder = input.getAttribute("data-placeholder");
-        input.setAttribute("data-placeholder", "");
-    });
-});
 
-let dropdown = document.querySelector("li.dropdown, .dropdown ul");
+})();
 
-if (document.body.contains(dropdown)) {
-    dropdown.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (!dropdown.classList.contains("opened")) {
+(function () {
+
+    let dropdown = document.querySelector("li.dropdown, .dropdown ul");
+
+    if (document.body.contains(dropdown)) {
+        dropdown.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (!dropdown.classList.contains("opened")) {
+                dropdown.classList.add("opened");
+                dropdown.querySelector("ul").style.display = "block";
+            } else {
+                dropdown.classList.remove("opened");
+                dropdown.querySelector("ul").style.display = "none";
+            }
+        });
+        
+        dropdown.addEventListener("click", (event) => {
+            event.preventDefault();
             dropdown.classList.add("opened");
             dropdown.querySelector("ul").style.display = "block";
-        } else {
+        }, {once : true});
+        
+        dropdown.addEventListener("mouseover", () => {
+            dropdown.classList.add("opened");
+            dropdown.querySelector("ul").style.display = "block";
+        });
+        
+        dropdown.addEventListener("mouseout", () => {
             dropdown.classList.remove("opened");
             dropdown.querySelector("ul").style.display = "none";
-        }
+        });
+    }
+
+})();
+
+(function () {
+
+    let dynamicInputs = document.querySelectorAll(".login-input, #id_email, #id_new_password1, #id_new_password2");
+
+    dynamicInputs.forEach((input) => {
+        input.addEventListener('focus', () => {
+            let inputid = input.getAttribute("id");
+            document.querySelector(`.${inputid}`).setAttribute('data-color', document.querySelector(`.${inputid}`).style.color);
+            document.querySelector(`.${inputid}`).style.color = "#fff";
+        });
+        input.addEventListener('focusout', () => {
+            let inputid = input.getAttribute("id");
+            document.querySelector(`.${inputid}`).style.color = document.querySelector(`.${inputid}`).getAttribute('data-color');
+        });
     });
+
+})();
+
+(function () {
+
+    let PassResetInput = document.querySelector("#id_email");
+
+    if (PassResetInput != null) {
+        PassResetInput.placeholder = "Email Address";
+    }
     
-    dropdown.addEventListener("click", (event) => {
-        event.preventDefault();
-        dropdown.classList.add("opened");
-        dropdown.querySelector("ul").style.display = "block";
-    }, {once : true});
+    let PassChangeInput1 = document.querySelector("#id_new_password1");
     
-    dropdown.addEventListener("mouseover", () => {
-        dropdown.classList.add("opened");
-        dropdown.querySelector("ul").style.display = "block";
-    });
+    if (PassChangeInput1 != null) {
+        PassChangeInput1.placeholder = "New Password";
+    }
     
-    dropdown.addEventListener("mouseout", () => {
-        dropdown.classList.remove("opened");
-        dropdown.querySelector("ul").style.display = "none";
-    });
-}
+    let PassChangeInput2 = document.querySelector("#id_new_password2");
+    
+    if (PassChangeInput2 != null) {
+        PassChangeInput2.placeholder = "Confirm New Password";
+    }
 
-let dynamicInputs = document.querySelectorAll(".login-input, #id_email, #id_new_password1, #id_new_password2");
-
-dynamicInputs.forEach((input) => {
-    input.addEventListener('focus', () => {
-        let inputid = input.getAttribute("id");
-        document.querySelector(`.${inputid}`).setAttribute('data-color', document.querySelector(`.${inputid}`).style.color);
-        document.querySelector(`.${inputid}`).style.color = "#fff";
-    });
-    input.addEventListener('focusout', () => {
-        let inputid = input.getAttribute("id");
-        document.querySelector(`.${inputid}`).style.color = document.querySelector(`.${inputid}`).getAttribute('data-color');
-    });
-});
-
-
-let PassResetInput = document.querySelector("#id_email");
-
-if (PassResetInput != null) {
-    PassResetInput.placeholder = "Email Address";
-}
-
-let PassChangeInput1 = document.querySelector("#id_new_password1");
-
-if (PassChangeInput1 != null) {
-    PassChangeInput1.placeholder = "New Password";
-}
-
-let PassChangeInput2 = document.querySelector("#id_new_password2");
-
-if (PassChangeInput2 != null) {
-    PassChangeInput2.placeholder = "Confirm New Password";
-}
+})();

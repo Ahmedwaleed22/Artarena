@@ -651,6 +651,52 @@ footer .content .links .period {
   box-shadow: 0 1px 8px #000;
 }
 
+#addphoto {
+  margin-top: 3rem;
+}
+#addphoto .uploadtitle {
+  margin-bottom: 20px;
+}
+#addphoto .upload {
+  border: 4px dashed #e6e6e6;
+  background: #f9f6f6;
+  padding: 50px;
+  padding-bottom: 1px;
+  text-align: center;
+}
+#addphoto .upload h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+#addphoto .upload p {
+  color: #7e8886;
+  text-align: center;
+}
+#addphoto .upload button {
+  position: relative;
+  top: 20px;
+  padding: 10px;
+  width: 200px;
+}
+#addphoto form {
+  margin-top: 30px;
+}
+#addphoto form input, #addphoto form textarea, #addphoto form select {
+  margin-bottom: 10px;
+}
+#addphoto form textarea {
+  height: 200px;
+}
+#addphoto form button {
+  width: 250px;
+  height: 60px;
+  margin-top: 20px;
+}
+#addphoto form button i {
+  margin-right: 7px;
+}
+
 * {
   margin: 0;
   padding: 0;

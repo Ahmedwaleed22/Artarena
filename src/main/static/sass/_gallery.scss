@@ -95,3 +95,48 @@
         box-shadow: 0 1px 8px #000;
     }
 }
+#addphoto {
+    margin-top: 3rem;
+    .uploadtitle {
+        margin-bottom: 20px;
+    }
+    .upload {
+        border: 4px dashed #e6e6e6;
+        background: #f9f6f6;
+        padding: 50px;
+        padding-bottom: 1px;
+        text-align: center;
+        h3 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #7e8886;
+            text-align: center;
+        }
+        button {
+            position: relative;
+            top: 20px;
+            padding: 10px;
+            width: 200px;
+        }
+    }
+    form {
+        margin-top: 30px;
+        input, textarea, select {
+            margin-bottom: 10px;
+        }
+        textarea {
+            height: 200px
+        }
+        button {
+            width: 250px;
+            height: 60px;
+            margin-top: 20px;
+            i {
+                margin-right: 7px;
+            }
+        }
+    }
+}

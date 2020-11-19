@@ -7,16 +7,15 @@
 	</div>
 	<ul id="search">
 		<li>
-			<form action="" method="get">
-				<input class="form-control" type="search" name="query" placeholder="Search Your Favourite Artist">
+			<form action="gallery" method="get">
+				<input class="form-control" type="search" name="query" placeholder="Search Your Favourite Artist" autocomplete="off">
 			</form>
 		</li>
 	</ul>
 	<ul id="nav-links">
 		<li><a href="/" class="main animation">Home</a></li>
 		<li><a href="/gallery" class="animation">Gallery</a></li>
-		<li><a href="/topusers" class="animation">Top Users</a></li>
-		<li><a href="/news" class="animation">News</a></li>
+		<li><a href="/profile/{{ user.get_username }}" class="animation">Public Profile</a></li>
 		{% if user.is_authenticated %}
 		<li class="dropdown">
 			<a href="#">My Account <i class="dropdown-icon far fa-angle-down"></i></a>

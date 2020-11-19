@@ -1,0 +1,31 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<section id="addphoto">
+    <div class="container">
+        <h1 class="uploadtitle">Upload Painting</h1>
+        <div class="upload">
+            <h3>Drop Your Painting Here!</h3>
+            <p>Or Click!</p>
+            <button class="btn btn-success"><i class="fas fa-plus-circle" aria-hidden="true"></i> Add Painting</button>
+        </div>
+        <form class="addphoto" action="/gallery/add/" method="post">
+            <input type="text" class="form-control" name="name" placeholder="Paint Name">
+            <textarea name="description" class="form-control" placeholder="Painting Description"></textarea>
+            <select name="category" class="form-control">
+                <option value="" disabled selected>Category</option>
+                <option value="Illustration Drawing">Illustration Drawing</option>
+                <option value="Life Drawing">Life Drawing</option>
+                <option value="Emotive Drawing">Emotive Drawing</option>
+                <option value="Analytic Drawing">Analytic Drawing</option>
+                <option value="Perspective drawing">Perspective drawing</option>
+                <option value="Diagrammatic Drawing">Diagrammatic Drawing</option>
+                <option value="Geometric Drawing">Geometric Drawing</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="submit" class="btn btn-success"><i class="fas fa-upload"></i> Upload Painting</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
