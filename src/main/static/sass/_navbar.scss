@@ -67,7 +67,7 @@
     padding: 2rem;
     background: #333;
     display: none;
-    li:first-child {
+    li:not(:last-child) {
       margin-bottom: 20px;
       padding-bottom: 20px;
       border-bottom: 1px solid;

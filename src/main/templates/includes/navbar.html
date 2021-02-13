@@ -20,6 +20,9 @@
 		<li class="dropdown">
 			<a href="#">My Account <i class="dropdown-icon far fa-angle-down"></i></a>
 			<ul>
+				{% if user.is_superuser %}
+				<li><a onclick="window.open('/admin', '_self')">Admin</a></li>
+				{% endif %}
 				<li><a onclick="window.open('/profile', '_self')">Profile</a></li>
 				<li><a onclick="window.open('/logout', '_self')">Logout</a></li>
 			</ul>

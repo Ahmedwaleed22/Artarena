@@ -14,6 +14,7 @@
                 <div class="overlay">
                     {% if painting.HasAds %}<i class="fas fa-ad"></i>{% endif %}
                     <p class="ptitle">{{ painting.PaintingName }}</p>
+                    <p class="artistname ptitle">BY: {{ painting.Artist }}</p>
                 </div>
                 <img src="uploads/{{ painting.Painting }}" alt="{{ painting.PaintingName }} By {{ painting.Artist }}">
             </div>
