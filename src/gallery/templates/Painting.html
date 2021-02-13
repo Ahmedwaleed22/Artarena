@@ -1,0 +1,21 @@
+{% extends 'includes/base.html' %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<div class="container">
+    <section id="singlepainting">
+        <div class="SinglePaintingImg">
+            <img src="/gallery/uploads/{{ painting.Painting }}">
+        </div>
+        <div class="caption">
+            <h5 class="artist">By: {{ painting.Artist }}</h5>
+            <h1 class="PaintingTitle">{{ painting.PaintingName }}</h1>
+            <p class="PaintingDesc">{{ painting.PaintingDesc }}</p>
+            <div class="actions">
+                <div class="links">
+                    <a href="#like"><i class="fas fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

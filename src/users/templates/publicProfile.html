@@ -1,0 +1,65 @@
+{% extends 'includes/base.html' %}
+{% load static %}
+{% block head %}
+<style>
+    body {
+        background: #f2f6f4;
+    }
+</style>
+{% endblock %}
+{% block body %}
+{% include 'includes/navbar.html' %}
+<section id="profile">
+    <div class="container">
+        <div class="leftside">
+            <div class="userInfo">
+                <div class="avatar">
+                    <img src="{% static 'img/avatar.png' %}">
+                </div>
+                <h4 class="bigger title">{{ fetchedUser }}</h4>
+                <p class="followers">8k Followers</p>
+                {% if user == fetchedUser %}
+                    <button disabled class="follow btn btn-secondary">You Cannot Follow Yourself</button>
+                {% else %}
+                    <button class="follow btn btn-success">FOLLOW</button>
+                {% endif %}
+            </div>
+            <div class="userInfo">
+                <i style="font-size: 80px;" class="icon fas fa-badge-check"></i>
+                <h4 class="profits">VERIFIED</h4>
+                <p class="abalance">This Person Is Fully Trusted And Certified By Artarena Team</p>
+                <div class="actions">
+                    <a href="/profits/withdraw">USER PAINTINGS</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="details">
+                <h2>Personal Details</h2>
+                <div class="info">
+                    <div class="detailblock">
+                        <div class="title">Firstname</div>
+                        <div class="answer">{{ fetchedUser.first_name }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Lastname</div>
+                        <div class="answer">{{ fetchedUser.last_name }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Username</div>
+                        <div class="answer">{{ fetchedUser.get_username }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title email">Email Address</div>
+                        <div class="answer">{{ fetchedUser.email }}</div>
+                    </div>
+                    <div class="detailblock">
+                        <div class="title">Joined On</div>
+                        <div class="answer">{{ fetchedUser.date_joined }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
