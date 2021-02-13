@@ -136,6 +136,10 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
+MEDIA_URL = '/gallery/uploads/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .forms import UserRegisterForm
 from django.views import View
 from django.core.mail import send_mail
+from gallery.models import Painting
 
 # Create your views here.
 
@@ -63,5 +64,15 @@ class Profile(View):
     def get(self, request):
         if request.user.is_authenticated:
             return render(request, 'profile.html', {})
+
+        raise Http404
+
+
+class PublicProfile(View):
+    def get(self, request, user):
+        if User.objects.filter(username=user).exists():
+            fetchedUser = User.objects.get(username=user)
+            paintings = Painting.objects.filter(Artist=fetchedUser)
+            return render(request, 'publicProfile.html', {'fetchedUser': fetchedUser, 'paintings': paintings})
 
         raise Http404

@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from . import settings
 from users import views as userview
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('main.urls')),
@@ -31,4 +32,7 @@ urlpatterns = [
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
     path('profile/', userview.Profile.as_view()),
     path('gallery/', include('gallery.urls')),
+    path('profile/<user>', userview.PublicProfile.as_view()),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

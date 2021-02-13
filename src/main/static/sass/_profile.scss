@@ -33,6 +33,16 @@
         -webkit-box-shadow: 0 1px 7px #dde4e3;
         -moz-box-shadow: 0 1px 7px #dde4e3;
         box-shadow: 0 1px 7px #dde4e3;
+        .bigger {
+            font-size: 30px;
+        }
+        .followers {
+            font-size: 19px;
+            margin-top: 10px;
+        }
+        .follow {
+            width: 220px;
+        }
         &:first-child {
             margin-bottom: 25px;
         }
@@ -43,7 +53,6 @@
             max-width: 400px;
         }
         @media screen and (max-width: 1362px) {
-            height: 320px;
             right: 0;
             left: 0;
             margin: auto;
@@ -149,7 +158,7 @@
             margin-top: 50px;
         }
     }
-    .rightside .settings {
+    .rightside .settings, .topuserpaintings {
         float: left;
         background: #fff;
         margin-left: 100px;

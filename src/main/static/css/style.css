@@ -366,6 +366,16 @@ footer .content .links .period {
   -moz-box-shadow: 0 1px 7px #dde4e3;
   box-shadow: 0 1px 7px #dde4e3;
 }
+#profile .userInfo .bigger {
+  font-size: 30px;
+}
+#profile .userInfo .followers {
+  font-size: 19px;
+  margin-top: 10px;
+}
+#profile .userInfo .follow {
+  width: 220px;
+}
 #profile .userInfo:first-child {
   margin-bottom: 25px;
 }
@@ -381,7 +391,6 @@ footer .content .links .period {
 }
 @media screen and (max-width: 1362px) {
   #profile .userInfo {
-    height: 320px;
     right: 0;
     left: 0;
     margin: auto;
@@ -495,7 +504,7 @@ footer .content .links .period {
     margin-top: 50px;
   }
 }
-#profile .rightside .settings {
+#profile .rightside .settings, #profile .topuserpaintings {
   float: left;
   background: #fff;
   margin-left: 100px;
@@ -506,41 +515,41 @@ footer .content .links .period {
   box-shadow: 0 1px 7px #dde4e3;
   padding: 15px 20px;
 }
-#profile .rightside .settings .info {
+#profile .rightside .settings .info, #profile .topuserpaintings .info {
   margin-left: 170px;
   margin-top: 20px;
 }
-#profile .rightside .settings .info .detailblock {
+#profile .rightside .settings .info .detailblock, #profile .topuserpaintings .info .detailblock {
   display: block;
 }
-#profile .rightside .settings .info .detailblock:not(:last-child) {
+#profile .rightside .settings .info .detailblock:not(:last-child), #profile .topuserpaintings .info .detailblock:not(:last-child) {
   margin-bottom: 20px;
 }
-#profile .rightside .settings .info .detailblock .long {
+#profile .rightside .settings .info .detailblock .long, #profile .topuserpaintings .info .detailblock .long {
   margin-right: 15px !important;
 }
-#profile .rightside .settings .info .detailblock div {
+#profile .rightside .settings .info .detailblock div, #profile .topuserpaintings .info .detailblock div {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
   display: inline;
 }
-#profile .rightside .settings .info .detailblock div:first-child {
+#profile .rightside .settings .info .detailblock div:first-child, #profile .topuserpaintings .info .detailblock div:first-child {
   margin-right: 50px;
   color: #7e8886;
 }
 @media screen and (max-width: 1362px) {
-  #profile .rightside .settings .info .detailblock div:first-child {
+  #profile .rightside .settings .info .detailblock div:first-child, #profile .topuserpaintings .info .detailblock div:first-child {
     margin-right: 50px;
   }
 }
 @media screen and (max-width: 1362px) {
-  #profile .rightside .settings .info {
+  #profile .rightside .settings .info, #profile .topuserpaintings .info {
     margin-left: 20px;
   }
 }
 @media screen and (max-width: 1362px) {
-  #profile .rightside .settings {
+  #profile .rightside .settings, #profile .topuserpaintings {
     width: 100%;
     margin-left: 0;
   }
@@ -641,6 +650,11 @@ footer .content .links .period {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+@media screen and (max-width: 574px) {
+  .painting .overlay {
+    display: none;
+  }
+}
 .painting img {
   width: 280px;
   height: 280px;
@@ -701,6 +715,115 @@ footer .content .links .period {
 }
 #addphoto form button i {
   margin-right: 7px;
+}
+
+#singlepainting {
+  margin-top: 55px;
+  width: 100%;
+}
+#singlepainting .SinglePaintingImg {
+  width: 500px;
+  height: 500px;
+  display: inline;
+  float: left;
+}
+@media screen and (max-width: 1199px) {
+  #singlepainting .SinglePaintingImg {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+#singlepainting .SinglePaintingImg img {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center center;
+  -webkit-box-shadow: 0 1px 8px #000;
+  -moz-box-shadow: 0 1px 8px #000;
+  box-shadow: 0 1px 8px #000;
+}
+@media screen and (max-width: 1199px) {
+  #singlepainting .SinglePaintingImg img {
+    width: auto;
+    height: auto;
+    max-width: 700px;
+    max-height: 500px;
+  }
+}
+@media screen and (max-width: 359px) {
+  #singlepainting .SinglePaintingImg img {
+    width: 280px;
+  }
+}
+#singlepainting .caption {
+  max-width: 500px;
+  height: 500px;
+  display: inline;
+  float: left;
+  margin-left: 40px;
+}
+#singlepainting .caption .artist {
+  color: #a4afad;
+  font-style: italic;
+}
+#singlepainting .caption .PaintingTitle {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+#singlepainting .caption .PaintingDesc {
+  margin-left: 20px;
+}
+@media screen and (max-width: 1199px) {
+  #singlepainting .caption .PaintingDesc {
+    max-width: 500px;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+#singlepainting .caption .actions {
+  margin-left: 20px;
+}
+#singlepainting .caption .actions .links {
+  display: block;
+}
+#singlepainting .caption .actions a {
+  font-size: 4rem;
+  color: #9a9a9a;
+  transition: color 0.2s;
+}
+#singlepainting .caption .actions a:not(:last-child) {
+  margin-right: 20px;
+}
+#singlepainting .caption .actions a:hover {
+  color: #ff0000;
+}
+#singlepainting .caption .actions p {
+  float: left;
+  font-size: 1.3rem;
+}
+#singlepainting .caption .actions p:not(:last-child) {
+  margin-right: 85px;
+}
+@media screen and (max-width: 1199px) {
+  #singlepainting .caption {
+    margin-left: 0;
+    clear: both;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 359px) {
+  #singlepainting .caption {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1199px) {
+  #singlepainting {
+    text-align: center;
+  }
 }
 
 * {

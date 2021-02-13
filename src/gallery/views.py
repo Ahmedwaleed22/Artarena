@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.http import Http404
 from .models import Painting
@@ -7,7 +7,8 @@ from .models import Painting
 
 class gallery(View):
     def get(self, request):
-        return render(request, 'gallery.html', {})
+        Paintings = Painting.objects.all()
+        return render(request, 'gallery.html', {'paintings': Paintings})
 
 
 class add(View):
@@ -33,3 +34,14 @@ class add(View):
         if not request.user.is_authenticated:
             raise Http404
         return render(request, self.template, {})
+
+
+class PaintingView(View):
+    def get(self, request, name, id):
+        painting = get_object_or_404(Painting, id=id)
+
+        if name == painting.PaintingName:
+            return render(request, 'Painting.html', {"painting": painting})
+
+        else:
+            raise Http404

@@ -9,26 +9,15 @@
 <div class="gallery">
     <div class="container">
         <div class="card-deck">
-            <div class="painting">
+            {% for painting in paintings %}
+            <div class="painting" onclick="window.open('{{ painting.PaintingName }}/{{ painting.id }}', '_self')">
                 <div class="overlay">
-                    <i class="fas fa-ad"></i>
-                    <p class="ptitle">Mixed Colors</p>
+                    {% if painting.HasAds %}<i class="fas fa-ad"></i>{% endif %}
+                    <p class="ptitle">{{ painting.PaintingName }}</p>
                 </div>
-                <img src="{% static 'img/painting1.jpg' %}" alt="painting1">
+                <img src="uploads/{{ painting.Painting }}" alt="{{ painting.PaintingName }} By {{ painting.Artist }}">
             </div>
-            <div class="painting">
-                <div class="overlay">
-                    <p class="ptitle">Its A Beautiful World</p>
-                </div>
-                <img src="{% static 'img/painting2.jpg' %}" alt="painting2">
-            </div>
-            <div class="painting">
-                <div class="overlay">
-                    <i class="fas fa-ad"></i>
-                    <p class="ptitle">Blue Hummans</p>
-                </div>
-                <img src="{% static 'img/painting3.jpg' %}" alt="painting3">
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

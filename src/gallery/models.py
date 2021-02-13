@@ -17,6 +17,23 @@ class Painting(models.Model):
     PaintingDesc = models.TextField()
     PaintingCat = models.CharField(max_length=255)
     Artist = models.ForeignKey(User, on_delete=models.CASCADE)
+    HasAds = models.BooleanField(default=False)
 
     def __str__(self):
         return self.PaintingName
+
+
+class Likes(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    Post = models.ForeignKey(Painting, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.User
+
+
+class Dislikes(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    Post = models.ForeignKey(Painting, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.User
